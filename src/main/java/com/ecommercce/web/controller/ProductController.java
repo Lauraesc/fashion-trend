@@ -52,14 +52,14 @@ public class ProductController {
         return ResponseEntity.ok(this.productService.getByName(name));
     }
 
-    @GetMapping("/with/{ingredient}")
-    public ResponseEntity<List<ProductEntity>> getWith(@PathVariable String ingredient) {
-        return ResponseEntity.ok(this.productService.getWith(ingredient));
+    @GetMapping("/with/{available}")
+    public ResponseEntity<List<ProductEntity>> getWith(@PathVariable String available) {
+        return ResponseEntity.ok(this.productService.getWith(available));
     }
 
-    @GetMapping("/without/{ingredient}")
-    public ResponseEntity<List<ProductEntity>> getWithout(@PathVariable String ingredient) {
-        return ResponseEntity.ok(this.productService.getWithout(ingredient));
+    @GetMapping("/without/{available}")
+    public ResponseEntity<List<ProductEntity>> getWithout(@PathVariable String available) {
+        return ResponseEntity.ok(this.productService.getWithout(available));
     }
 
     @GetMapping("/cheapest/{price}")

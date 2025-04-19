@@ -44,12 +44,12 @@ public class ProductService {
         return this.productRepository.findFirstByAvailableTrueAndNameIgnoreCase(name).orElseThrow(() -> new RuntimeException("La producto no existe"));
     }
 
-    public List<ProductEntity> getWith(String ingredient) {
-        return this.productRepository.findAllByAvailableTrueAndDescriptionContainingIgnoreCase(ingredient);
+    public List<ProductEntity> getWith(String available) {
+        return this.productRepository.findAllByAvailableTrueAndDescriptionContainingIgnoreCase(available);
     }
 
-    public List<ProductEntity> getWithout(String ingredient) {
-        return this.productRepository.findAllByAvailableTrueAndDescriptionNotContainingIgnoreCase(ingredient);
+    public List<ProductEntity> getWithout(String available) {
+        return this.productRepository.findAllByAvailableTrueAndDescriptionNotContainingIgnoreCase(available);
     }
 
     public List<ProductEntity> getCheapest(double price) {
